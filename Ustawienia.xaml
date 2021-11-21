@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Ustawienia">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Ustawienia" FontSize="80"/>
+            <Button Text="Odcisk Palca" x:Name="AuthButton"    
+                Clicked="AuthButton_Clicked"    
+                HorizontalOptions="Center"    
+                VerticalOptions="CenterAndExpand"
+                    Grid.Column="0" Grid.Row="0" FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
