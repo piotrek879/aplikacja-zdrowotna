@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.krokomierz">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Grid RowSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                  
+                </Grid.RowDefinitions>
+
+
+            </Grid>
+
+            <Label x:Name="Label_Start" Text="start"/>
+            <Label x:Name="Label_Stop" Text="stop"/>
+
+
+            <Button x:Name="Start" Clicked="stop_Clicked" Text="Zacznij liczyć moje kroki"   
+            Grid.Column="0" Grid.Row="0" FontSize="20" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
+            BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+
+            <Button x:Name="Stop" Clicked="stop_Clicked" Text="Zakończ liczenie"   
+            Grid.Column="1" Grid.Row="0" FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
+            BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
