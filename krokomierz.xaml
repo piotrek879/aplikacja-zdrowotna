@@ -14,23 +14,32 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-                  
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    
                 </Grid.RowDefinitions>
 
+                <Label Grid.Row="0" Grid.ColumnSpan="2" x:Name="LabelX" BackgroundColor="white"/>
+                <Label Grid.Row="1" Grid.ColumnSpan="2" x:Name="LabelY" BackgroundColor="white"/>
+                <Label Grid.Row="2" Grid.ColumnSpan="2" x:Name="LabelZ" BackgroundColor="white"/>
+                
+
+
+                <Button x:Name="Start" Clicked="Start_Clicked" Text="Zacznij liczyć moje kroki"   
+                Grid.Column="0" Grid.Row="3" FontSize="10" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
+                BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+
+                <Button x:Name="Stop" Clicked="Stop_Clicked" Text="Zakończ liczenie"   
+                Grid.Column="1" Grid.Row="3" FontSize="10" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
+                BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+
+                <Label Grid.Row="4" Grid.ColumnSpan="2" x:Name="LabelWynik" BackgroundColor="white"/>
 
             </Grid>
 
-            <Label x:Name="Label_Start" Text="start"/>
-            <Label x:Name="Label_Stop" Text="stop"/>
-
-
-            <Button x:Name="Start" Clicked="stop_Clicked" Text="Zacznij liczyć moje kroki"   
-            Grid.Column="0" Grid.Row="0" FontSize="20" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
-            BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
-
-            <Button x:Name="Stop" Clicked="stop_Clicked" Text="Zakończ liczenie"   
-            Grid.Column="1" Grid.Row="0" FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
-            BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+            
 
         </StackLayout>
     </ContentPage.Content>
