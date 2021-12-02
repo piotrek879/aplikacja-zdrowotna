@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.MainPage">
+    <ScrollView>
+        <StackLayout>
+        <Frame>
+            <Image Source="logo.jpg">
+
+            </Image>
+            
+        </Frame>
+        <ScrollView></ScrollView>
+        <Label Text="Przebyty dystans: " HeightRequest="50" FontSize="20" FontFamily="Comic Sans MS"  />
+
+            <Grid RowSpacing="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+         
+        </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+        </Grid>
+
+        <Button x:Name="krokomierz" Clicked="krokomierz_Clicked" Text="krokomierz"   
+            Grid.Column="0" Grid.Row="0" FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
+            BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+
+        <Button x:Name="puls" Clicked="Puls_Clicked" Text="Zmierz Puls" ImageSource="serce.png"  
+            Grid.Column="0" Grid.Row="0" FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
+            BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+
+        
+        <Button x:Name="Lokalizacja" Clicked="Lokalizacja_Clicked" Text="Lokalizacja" ImageSource="znacznik2.png" Margin="5" 
+                Grid.Column="0" Grid.Row="1"  FontSize="30" TextColor="white" FontFamily="Comic Sans MS" BorderRadius="10" 
+                BackgroundColor="#ffa75f" BorderWidth="2" BorderColor="Black" CornerRadius="50" />
+
+        <Button x:Name="postepy" Clicked="Postepy_Clicked" Text="Twoje Postępy" ImageSource="wykres2.png" Margin="5" 
+                Grid.Column="0" Grid.Row="2"  FontSize="30" TextColor="white" FontFamily="Comic Sans MS" BorderRadius="10" 
+                BackgroundColor="#ffa049" BorderWidth="2" BorderColor="Black" CornerRadius="50" />
+
+        <Button x:Name="predkosc" Clicked="Predkosc_Clicked" Text="Prędkość" ImageSource="predkosc.png" 
+                Grid.Column="0" Grid.Row="3" Margin="5" FontSize="30" TextColor="white" FontFamily="Comic Sans MS" BorderRadius="10" 
+                BackgroundColor="#ffca9e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+
+        <Button x:Name="ustawienia" Clicked="Ustawienia_Clicked" ImageSource="odcisk.png" WidthRequest="72" HeightRequest="72" 
+                HorizontalOptions="CenterAndExpand" BackgroundColor="white" />
+
+            
+    
+    </StackLayout>
+</ScrollView>
+</ContentPage>
