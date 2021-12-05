@@ -6,7 +6,7 @@
 
         <StackLayout>
 
-            <Grid RowSpacing="10">
+            <Grid RowSpacing="10" MinimumHeightRequest="300">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -16,15 +16,16 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="45" />
                     
+
                 </Grid.RowDefinitions>
 
                 <Label Grid.Row="0" Grid.ColumnSpan="2" x:Name="LabelX" BackgroundColor="white"/>
                 <Label Grid.Row="1" Grid.ColumnSpan="2" x:Name="LabelY" BackgroundColor="white"/>
                 <Label Grid.Row="2" Grid.ColumnSpan="2" x:Name="LabelZ" BackgroundColor="white"/>
-                
+
 
 
                 <Button x:Name="Start" Clicked="Start_Clicked" Text="Zacznij liczyć moje kroki"   
@@ -34,12 +35,36 @@
                 <Button x:Name="Stop" Clicked="Stop_Clicked" Text="Zakończ liczenie"   
                 Grid.Column="1" Grid.Row="3" FontSize="10" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
                 BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+                
 
                 <Label Grid.Row="4" Grid.ColumnSpan="2" x:Name="LabelWynik" BackgroundColor="white"/>
 
+                
+
             </Grid>
 
-            
+
+            <Entry x:Name="dateEntry" Placeholder="Podaj dzień" />
+            <Button Text="Dodaj do bazy" Clicked="OnButtonClicked"  FontSize="10"/>
+
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Name}"
+                               FontSize="Medium" />
+                            <Label Text="{Binding Dzien}"
+                               TextColor="Black"
+                               FontSize="Small" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+
+
+
 
         </StackLayout>
     </ContentPage.Content>

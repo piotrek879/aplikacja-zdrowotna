@@ -29,7 +29,7 @@ namespace App3
             Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
             Accelerometer.Start(SensorSpeed.UI);
 
-       
+
 
         }
 
@@ -44,38 +44,38 @@ namespace App3
             //while (true)
             //{
 
-                //opoznienie pomiedzy krokami
-                await Task.Delay(500);
+            //opoznienie pomiedzy krokami
+            await Task.Delay(600);
 
-                double x = e.Reading.Acceleration.X;
-                double y = e.Reading.Acceleration.Y;
-                double z = e.Reading.Acceleration.Z;
+            double x = e.Reading.Acceleration.X;
+            double y = e.Reading.Acceleration.Y;
+            double z = e.Reading.Acceleration.Z;
 
-                //opoznienie pomiedzy krokami
-                await Task.Delay(500);
+            //opoznienie pomiedzy krokami
+            await Task.Delay(600);
 
-                double wektorPrzyspieszenia = Math.Sqrt((x * x) + (y * y) + (z * z));
-                double delta = (wektorPrzyspieszenia + wartoscPoprzednia) / 2;
-                wartoscPoprzednia = wektorPrzyspieszenia;
+            double wektorPrzyspieszenia = Math.Sqrt((x * x) + (y * y) + (z * z));
+            double delta = (wektorPrzyspieszenia + wartoscPoprzednia) / 2;
+            wartoscPoprzednia = wektorPrzyspieszenia;
 
-                //stepCount++;
+            //stepCount++;
 
-                if (delta > 1.5)
-                {
-                    stepCount++;
-                }
+            if (delta > 3)
+            {
+                stepCount++;
+            }
 
 
-                LabelX.Text = "Twoje polozenie X: " + e.Reading.Acceleration.X.ToString();
-                LabelY.Text = "Twoje polozenie Y: " + e.Reading.Acceleration.Y.ToString();
-                LabelZ.Text = "Twoje polozenie Z: " + e.Reading.Acceleration.Z.ToString();
-                LabelWynik.Text = "Liczba twoich krokow: " + stepCount.ToString();
+            LabelX.Text = "Twoje polozenie X: " + e.Reading.Acceleration.X.ToString();
+            LabelY.Text = "Twoje polozenie Y: " + e.Reading.Acceleration.Y.ToString();
+            LabelZ.Text = "Twoje polozenie Z: " + e.Reading.Acceleration.Z.ToString();
+            LabelWynik.Text = "Liczba twoich krokow: " + stepCount.ToString();
 
-                //await Task.Delay(5000);
+            //await Task.Delay(5000);
 
-                /*LabelX.Text = e.Reading.Acceleration.X.ToString();
-                LabelY.Text = e.Reading.Acceleration.Y.ToString();
-                LabelZ.Text = e.Reading.Acceleration.Z.ToString();*/
+            /*LabelX.Text = e.Reading.Acceleration.X.ToString();
+            LabelY.Text = e.Reading.Acceleration.Y.ToString();
+            LabelZ.Text = e.Reading.Acceleration.Z.ToString();*/
             //}
         }
 
@@ -85,6 +85,31 @@ namespace App3
                 return;
             Accelerometer.ReadingChanged -= Accelerometer_ReadingChanged;
             Accelerometer.Stop();
+        }
+
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            collectionView.ItemsSource = await App.Database.GetPeopleAsync();
+        }
+
+        async void OnButtonClicked(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(LabelWynik.Text))
+            {
+                await App.Database.SavePersonAsync(new Person
+                {
+                    Name = LabelWynik.Text,
+                    Dzien = dateEntry.Text
+
+                });
+
+                LabelWynik.Text = string.Empty;
+                
+
+                collectionView.ItemsSource = await App.Database.GetPeopleAsync();
+            }
         }
 
 
