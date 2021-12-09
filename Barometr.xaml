@@ -6,6 +6,13 @@
         <StackLayout>
             <Label  x:Name="BarometrWynik" BackgroundColor="white"/>
             <Button x:Name="cisnienie" Clicked="Cisnienie_Clicked" Text="zmierz cisnienie" HorizontalOptions="CenterAndExpand" BackgroundColor="white" />
+            <Label  x:Name="GodzinaLabel" BackgroundColor="white"/>
+            <Button x:Name="godzina" Clicked="Godzina_Clicked" Text="aktualna godzina" HorizontalOptions="CenterAndExpand" BackgroundColor="white" />
+
+            <Label  x:Name="Samopoczucie" BackgroundColor="Orange" FontSize="20" HeightRequest="60" HorizontalTextAlignment="Center"/>
+
+            <Label  x:Name="Tresc" BackgroundColor="white"  FontFamily="FuzzyBubbles-Bold.ttf#FuzzyBubbles-Bold" TextColor="black" FontSize="17" MinimumHeightRequest="200"  Padding="20,20,20,20"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

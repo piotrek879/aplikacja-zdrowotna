@@ -22,6 +22,13 @@ namespace App3
             Barometer.ReadingChanged += Barometer_ReadingChanged;
         }
 
+        private void Godzina_Clicked(object sender, EventArgs e)
+        {
+            string godzina = DateTime.Now.Hour.ToString();
+            string minuty = DateTime.Now.Minute.ToString();
+            string sekundy = DateTime.Now.Second.ToString();
+            GodzinaLabel.Text = "Aktualnie mamy godzinę: " + godzina + ":" + minuty + ":" + sekundy;
+        }
 
         private void Cisnienie_Clicked(object sender, EventArgs e)
         {
@@ -38,8 +45,33 @@ namespace App3
             // Process Pressure
             Console.WriteLine($"Reading: Pressure: {data.PressureInHectopascals} hectopascals");
 
-            BarometrWynik.Text = "Cisnienie wynosi: " + e.Reading.PressureInHectopascals.ToString();
+            BarometrWynik.Text = "Ciśnienie wynosi: " + e.Reading.PressureInHectopascals.ToString() + "hPa";
 
+
+            if(data.PressureInHectopascals <= 1000)
+            {
+                Samopoczucie.TextColor = Color.Red;
+                Samopoczucie.Text = "Twoje samopoczucie może ulec zmianie !!!!!";
+                Tresc.Text =    "Ze względu na to, że ciśnienie wynosi: " + data.PressureInHectopascals.ToString() + ", może to u Ciebie powodować: " + '\n' +
+                                "- osłabienie" + '\n' +
+                                "- bóle głowy" + '\n' +
+                                "- złe samopoczucie" + '\n' +
+                                "- bóle kości, mięśni, stawów" + '\n' +
+                                "- skoki ciśnienia tętniczego krwi" + '\n' +
+                                "- nadmierna senność lub bezsenność" + '\n' +
+                                "- spadek energii życiowej" + '\n' +
+                                "- niechęć do aktywności fizycznej" + '\n' +
+                                "- wahania nastrojów" + '\n' +
+                                "- zaburzenia koncentracji" + '\n';
+            }
+            else
+            {
+                Samopoczucie.TextColor = Color.Green;
+                Samopoczucie.Text = "Ciśnienie nie powinno mieć wpływu na twoje samopoczucie";
+                Tresc.Text = "";
+            }
+
+            
         }
 
         public void ToggleBarometer()
@@ -53,11 +85,11 @@ namespace App3
             }
             catch (FeatureNotSupportedException fnsEx)
             {
-                // Feature not supported on device
+                // urzadzenie nie obsluguje czujnika
             }
             catch (Exception ex)
             {
-                // Other error has occurred.
+                // inne bledy
             }
         }
     }
