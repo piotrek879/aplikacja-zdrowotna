@@ -11,8 +11,11 @@ using Xamarin.Forms;
 
 namespace App3
 {
+
+
     public partial class MainPage : ContentPage
     {
+
         public MainPage()
         {
             InitializeComponent();
@@ -46,6 +49,11 @@ namespace App3
         private void krokomierz_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new krokomierz());
+        }
+
+        private void barometr_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Barometr());
         }
 
     }
