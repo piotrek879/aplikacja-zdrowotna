@@ -14,6 +14,13 @@
 
 
             <Frame>
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FC7D1F" Offset="0.0"/>
+                        <GradientStop Color="#EEC018" Offset="0.5"/>
+                        <GradientStop Color="#FCC615" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
                 <Image Source="logo.jpg">
 
                     </Image>
@@ -39,8 +46,8 @@
 
             </Grid>
 
-           
-            <Button x:Name="krokomierz" Clicked="krokomierz_Clicked" Text="krokomierz"   
+
+            <Button x:Name="krokomierz" Clicked="krokomierz_Clicked" Text="krokomierz"  ImageSource="krokomierz.png"
                     Grid.Column="0" Grid.Row="0"  FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
                     Margin="15,2,15,2"  BorderWidth="2" BorderColor="Black" CornerRadius="50">
                 <Button.Background>
@@ -51,16 +58,7 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="puls" Clicked="Puls_Clicked" Text="Zmierz Puls" ImageSource="serce.png"  
-                    Grid.Column="0" Grid.Row="1"  FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
-                    Margin="15,2,15,2"  BorderWidth="2" BorderColor="Black" CornerRadius="50">
-                <Button.Background>
-                    <LinearGradientBrush>
-                        <GradientStop Color="#FF7308" Offset="0.0"/>
-                        <GradientStop Color="#66023D" Offset="1.0"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
+            
             <Button x:Name="Lokalizacja" Clicked="Lokalizacja_Clicked" Text="Lokalizacja" ImageSource="znacznik2.png" 
                     Grid.Column="0" Grid.Row="2"  FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
                     Margin="15,2,15,2"  BorderWidth="2" BorderColor="Black" CornerRadius="50">
@@ -82,20 +80,11 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="predkosc" Clicked="Predkosc_Clicked" Text="Prędkość" ImageSource="predkosc.png" 
-                Grid.Column="0" Grid.Row="4"  FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
-                Margin="15,2,15,2"  BorderWidth="2" BorderColor="Black" CornerRadius="50">
-                <Button.Background>
-                    <LinearGradientBrush>
-                        <GradientStop Color="#FF7308" Offset="0.0"/>
-                        <GradientStop Color="#66023D" Offset="1.0"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
+           
 
 
 
-            <Button x:Name="barometr" Clicked="barometr_Clicked" Text="barometr"   
+            <Button x:Name="barometr" Clicked="barometr_Clicked" Text="barometr"  ImageSource="barometr.png" 
              Grid.Column="0" Grid.Row="5"  FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
              Margin="15,2,15,2"  BorderWidth="2" BorderColor="Black" CornerRadius="50">
                 <Button.Background>
@@ -106,19 +95,10 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="ustawienia" Clicked="Ustawienia_Clicked" ImageSource="ustawienia2.png" WidthRequest="72" HeightRequest="72" 
-                HorizontalOptions="CenterAndExpand" BackgroundColor="GreenYellow" />
+            <Button x:Name="ustawienia" Clicked="Ustawienia_Clicked" ImageSource="OdciskPalca.png" WidthRequest="72" HeightRequest="72" 
+                HorizontalOptions="CenterAndExpand" BackgroundColor="#FCC615" />
 
-            <Button  Text="A button"  Grid.Column="0" Grid.Row="6"  FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
-                     Margin="15,2,15,2"  BorderWidth="2" BorderColor="Black" CornerRadius="50">
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                        <GradientStop Color="#786518" Offset="0.0"/>
-                        <GradientStop Color="#A38A17" Offset="0.5"/>
-                        <GradientStop Color="#FFFF4A" Offset="1.0"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
+            
             
         </StackLayout>
     </ScrollView>

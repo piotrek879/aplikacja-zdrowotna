@@ -6,6 +6,14 @@
 
         <StackLayout>
 
+            <StackLayout.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FCC615" Offset="0.0"/>
+                    <GradientStop Color="#EEC018" Offset="0.5"/>
+                    <GradientStop Color="#FC7D1F" Offset="1.0"/>
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
             <Grid RowSpacing="10" MinimumHeightRequest="300">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -22,30 +30,51 @@
 
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Grid.ColumnSpan="2" x:Name="LabelX" BackgroundColor="white"/>
-                <Label Grid.Row="1" Grid.ColumnSpan="2" x:Name="LabelY" BackgroundColor="white"/>
-                <Label Grid.Row="2" Grid.ColumnSpan="2" x:Name="LabelZ" BackgroundColor="white"/>
+                <Label Grid.Row="0" Grid.ColumnSpan="2" x:Name="LabelX" BackgroundColor="#FCC615"/>
+                <Label Grid.Row="1" Grid.ColumnSpan="2" x:Name="LabelY" BackgroundColor="#FCC615"/>
+                <Label Grid.Row="2" Grid.ColumnSpan="2" x:Name="LabelZ" BackgroundColor="#FCC615"/>
 
 
 
                 <Button x:Name="Start" Clicked="Start_Clicked" Text="Zacznij liczyć moje kroki"   
                 Grid.Column="0" Grid.Row="3" FontSize="10" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
-                BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+                BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50">
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FF7308" Offset="0.0"/>
+                            <GradientStop Color="#66023D" Offset="1.0"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
 
                 <Button x:Name="Stop" Clicked="Stop_Clicked" Text="Zakończ liczenie"   
                 Grid.Column="1" Grid.Row="3" FontSize="10" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
-                BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
-                
+                BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF7308" Offset="0.0"/>
+                        <GradientStop Color="#66023D" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                </Button>
 
-                <Label Grid.Row="4" Grid.ColumnSpan="2" x:Name="LabelWynik" BackgroundColor="white"/>
+
+                <Label Grid.Row="4" Grid.ColumnSpan="2" x:Name="LabelWynik" BackgroundColor="#FCC615"/>
 
                 
 
             </Grid>
 
 
-            <Entry x:Name="dateEntry" Placeholder="Podaj dzień" />
-            <Button Text="Dodaj do bazy" Clicked="OnButtonClicked"  FontSize="10"/>
+            <Entry x:Name="dateEntry" Placeholder="Podaj dzień" PlaceholderColor="White" />
+            <Button Text="Dodaj do bazy" TextColor="White" Clicked="OnButtonClicked"  FontSize="10">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF7308" Offset="0.0"/>
+                    <GradientStop Color="#66023D" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            </Button>
 
             <CollectionView x:Name="collectionView">
                 <CollectionView.ItemTemplate>

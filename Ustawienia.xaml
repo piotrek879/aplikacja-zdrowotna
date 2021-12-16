@@ -3,13 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.Ustawienia">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Ustawienia" FontSize="80"/>
+        <StackLayout BackgroundColor="DarkOrange">
+            <Label Text="Ustawienia" FontSize="70" TextColor="White"/>
+            <Label Text="Witaj w ustawieniach!
+                   Możesz tu ustawić odcisk palca klikając na poniższy przycisk." FontSize="30" TextColor="Black"/>
+            
             <Button Text="Odcisk Palca" x:Name="AuthButton"    
                 Clicked="AuthButton_Clicked"    
                 HorizontalOptions="Center"    
                 VerticalOptions="CenterAndExpand"
-                    Grid.Column="0" Grid.Row="0" FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" BackgroundColor="#ff953e" BorderWidth="2" BorderColor="Black" CornerRadius="50"/>
+                Grid.Column="0" Grid.Row="0" FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
+                BorderWidth="2" BorderColor="Black" CornerRadius="50">
+                <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF7308" Offset="0.0"/>
+                    <GradientStop Color="#66023D" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            </Button>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
