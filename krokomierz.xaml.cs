@@ -60,7 +60,7 @@ namespace App3
 
             //stepCount++;
 
-            if (delta > 3)
+            if (delta > 2)
             {
                 stepCount++;
             }
@@ -96,12 +96,24 @@ namespace App3
 
         async void OnButtonClicked(object sender, EventArgs e)
         {
+
+            //Dodanie aktulanej daty
+            string godzina = DateTime.Now.Hour.ToString();
+            string minuty = DateTime.Now.Minute.ToString();
+            string sekundy = DateTime.Now.Second.ToString();
+            string miesiac = DateTime.Now.Month.ToString();
+            string dzien = DateTime.Now.DayOfYear.ToString();
+            string rok = DateTime.Now.Year.ToString();
+            string dzisiaj = dzien + '.' + miesiac + '.' + rok  + 
+                " godz. " + godzina + ':' + minuty + ':' + sekundy;
+
+
             if (!string.IsNullOrWhiteSpace(LabelWynik.Text))
             {
-                await App.Database.SavePersonAsync(new Person
+                await App.Database.SavePersonAsync(new Wynik
                 {
                     Name = LabelWynik.Text,
-                    Dzien = dateEntry.Text
+                    Dzien = dzisiaj
 
                 });
 
