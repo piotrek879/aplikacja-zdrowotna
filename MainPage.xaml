@@ -69,7 +69,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="postepy" Clicked="Postepy_Clicked" Text="Twoje Postępy" ImageSource="wykres2.png" 
+            <Button x:Name="postepy" Clicked="Postepy_ClickedAsync" Text="Twoje Postępy" ImageSource="wykres2.png" 
                     Grid.Column="0" Grid.Row="3" FontSize="30" TextColor="White" FontFamily="Comic Sans MS" BorderRadius="10" 
                      Margin="15,2,15,2"  BorderWidth="2" BorderColor="Black" CornerRadius="50">
                 <Button.Background>

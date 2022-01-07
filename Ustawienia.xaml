@@ -4,7 +4,7 @@
              x:Class="App3.Ustawienia">
     <ContentPage.Content>
         <StackLayout BackgroundColor="DarkOrange">
-            <Label Text="Ustawienia" FontSize="70" TextColor="White"/>
+            <Label Text="Ustawienia" FontSize="60" TextColor="White"/>
             <Label Text="Witaj w ustawieniach!
                    Możesz tu ustawić odcisk palca klikając na poniższy przycisk." FontSize="30" TextColor="Black"/>
             

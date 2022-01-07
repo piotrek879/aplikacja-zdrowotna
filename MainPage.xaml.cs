@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
 
 [assembly: ExportFont("ComicSansMS3.ttf")]
 [assembly: ExportFont("FA5Regular.otf", Alias = "FontAwesome")]
@@ -21,9 +23,33 @@ namespace App3
             InitializeComponent();
         }
 
-        private void Postepy_Clicked(object sender, EventArgs e)
+        private async void Postepy_ClickedAsync(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Postepy());
+            
+            bool isFingerprintAvailable = await CrossFingerprint.Current.IsAvailableAsync(false);
+            if (!isFingerprintAvailable)
+            {
+                await DisplayAlert("Błąd",
+                    "Ustawienia biometryczne nie są dostępne lub nie zostały jeszcze skonfigurowane ", "OK");
+                return;
+            }
+
+            AuthenticationRequestConfiguration conf =
+                new AuthenticationRequestConfiguration("Zabezpieczenia",
+                "Zabezpieczenie do Twoich danych");
+
+            var authResult = await CrossFingerprint.Current.AuthenticateAsync(conf);
+            if (authResult.Authenticated)
+            {
+                //Success  
+                await DisplayAlert("Sukces", "Tożsamość potwierdzona", "OK");
+                Navigation.PushAsync(new Postepy());
+            }
+            else
+            {
+                await DisplayAlert("Błąd", "Nie można zidentyfikować odcisku palca", "OK");
+            }
+
         }
 
         private void Ustawienia_Clicked(object sender, EventArgs e)
@@ -55,6 +81,7 @@ namespace App3
         {
             Navigation.PushAsync(new Barometr());
         }
+
 
     }
 }
